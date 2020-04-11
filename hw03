@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main(void)
+{
+    unsigned int counter=1;
+    int ayg;
+    
+    printf("Guess a number:");
+    scanf("%d", &ayg);
+    
+    if(ayg>10){
+            printf("Your ans is greater than the correct ans.\n");
+        }
+        if(ayg<10){
+            printf("Your ans is smaller than the correct ans.\n");
+        }
+        if(ayg==10){
+            printf("Congratulations!\n");
+            printf("The times you guessed:%d\n", counter);
+        }
+    
+    while(counter!=0){
+        printf("Guess a number:");
+        scanf("%d", &ayg);
+        
+        counter+=1;
+        
+        if(ayg>10){
+            printf("Your ans is greater than the correct ans.\n");
+        }
+        if(ayg<10){
+            printf("Your ans is smaller than the correct ans.\n");
+        }
+        if(ayg==10){
+            printf("Congratulations!\n");
+            printf("The times you guessed:%d\n", counter);
+        }
+    }
+    
+}
