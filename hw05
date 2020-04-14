@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+    double x, n, ne, e, a, d;
+    unsigned int counter;
+    
+    printf("Enter a number x (|x|<1):");
+    scanf("%lf", &x);
+    printf("Enter a number n:");
+    scanf("%lf", &ne);
+    
+    for(n=0;n<=ne;++n){
+        e+=pow(x,n);
+    }
+    
+    printf("The exact result:%lf\n", e);
+    
+    a=1/(1-x);
+    
+    printf("The approximation:%lf\n", a);
+    
+    d=a-e;
+    
+    printf("The deviation:%lf", d);
+}
