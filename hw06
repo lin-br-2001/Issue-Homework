@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+int main(void)
+{
+    float t;
+    int l;
+    unsigned int ac=0, bc=0, cc=0, dc=0, ec=0;
+    
+    printf("Enter the item level.\n");
+    printf("Enter (ctrl+d) to end.\n");
+    
+    while((l=getchar())!=EOF){
+        
+        switch(l){
+            
+            case'A':
+            case'a':
+               ++ac;
+               break;
+               
+            case'B':
+            case'b':
+               ++bc;
+               break;
+            
+            case'C':
+            case'c':
+               ++cc;
+               break;
+            
+            case'D':
+            case'd':
+               ++dc;
+               break;
+               
+            case'E':
+            case'e':
+               ++ec;
+               break;
+            
+            case'\n':
+            case'\t':
+            case' ':
+               break;
+            
+            default:
+               printf("%s", "Incorrect letter grade entered.\n");
+               break;
+        }
+    }
+    
+    t=95.6*ac+82.4*bc+66.5*cc+54.8*dc+40.3*ec;
+    
+    printf("The total sales:%f\n", t);
+    printf("A:%u\n", ac);
+    printf("B:%u\n", bc);
+    printf("C:%u\n", cc);
+    printf("D:%u\n", dc);
+    printf("E:%u\n", ec);
+}
