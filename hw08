@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int detmin(float m, float n, float o, float p);
+
+int main(void)
+{
+    float a, b, c, d, e, f, dx, dy, dd, x, y;
+    
+    printf("%s", "Enter 6 numbers:\n");
+    scanf("%f%f%f%f%f%f", &a, &b, &c, &d, &e, &f);
+    
+    dd==detmin(a, b, d, e);
+    dx==detmin(c, b, f, e);
+    dy==detmin(a, c, d, f);
+    
+    if(dd!=0){
+        x==dx/dd;
+        y==dy/dd;
+        
+        printf("x:%f\n", x);
+        printf("y:%f\n", y);
+    }
+    else{
+        printf("No solution or infinite solutions.");
+    }
+}
+
+int detmin(float m, float n, float o, float p)
+{
+    return m*p-n*o;
+
+}
