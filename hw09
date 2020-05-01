@@ -48,17 +48,16 @@ int main(void)
             if(hs>17){
                 break;
             }
-            
             hz=draw();
             hs+=hz;
             
             printf("Added card:%d. Total points=%d.\n", hz, hs);
         }
-        if(s<=21 && hs<=21){
+        if(hs<=21){
             if(hs>s){
                printf("Host won!");
             }
-            if(hs=s){
+            if(hs==s){
                printf("Draw!");
             }
             if(hs<s){
@@ -69,8 +68,6 @@ int main(void)
             printf("Player won since host was busted!");
         }
     }
-    
-    
     
 }
 
