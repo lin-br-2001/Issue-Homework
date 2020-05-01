@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int draw(void);
+
+int main(void)
+{
+    unsigned int l=0, dl=0;
+    int x, y, z, s, hx, hy, hz, hs, c;
+    
+    srand(time(NULL));
+    
+    x=draw();
+    y=draw();
+    s=x+y;
+    hx=draw();
+    hy=draw();
+    hs=hx+hy;
+    
+    printf("Player 1st card:%d, 2nd card:%d. Total points=%d.\n", x, y, s);
+    printf("One more card? 1-yes/0-no\n");
+    scanf("%d", &c);
+    
+    if(c==1){
+        
+        while(++l<=21){
+            if(c==0){
+               break;
+            }
+            if(s>21){
+                printf("Host won since player was busted!");
+                return 0;
+            }
+            z=draw();
+            s+=z;
+        
+            printf("Added card:%d. Total points=%d.\n", z, s);
+            printf("One more card? 1-yes/0-no\n");
+            scanf("%d", &c);
+        }
+    }
+    if(c==0){
+        printf("Host 1st card:%d, 2nd card:%d. Total points=%d.\n", hx, hy, hs);
+        while(++dl<=17){
+            if(hs>17){
+                break;
+            }
+            if(s>21){
+                printf("Player won since host was busted!");
+                return 0;
+            }
+            hz=draw();
+            hs+=hz;
+            printf("Added card:%d. Total points=%d.\n", hz, hs);
+        }
+        if(hs>s){
+            printf("Host won!");
+        }
+        if(hs=s){
+            printf("Draw!");
+        }
+        if(hs<s){
+            printf("Player won!");
+        }
+    }
+}
+
+int draw(void){
+    int n;
+    
+    n=1+(rand()%10);
+    return n;
+}
