@@ -28,16 +28,18 @@ int main(void)
             if(c==0){
                break;
             }
-            if(s>21){
-                printf("Host won since player was busted!");
-                return 0;
-            }
             z=draw();
             s+=z;
         
             printf("Added card:%d. Total points=%d.\n", z, s);
-            printf("One more card? 1-yes/0-no\n");
-            scanf("%d", &c);
+            if(s<=21){
+                printf("One more card? 1-yes/0-no\n");
+                scanf("%d", &c);
+            }
+            else{
+                printf("Host won since player was busted!");
+                return 0;
+            }
         }
     }
     if(c==0){
@@ -46,24 +48,30 @@ int main(void)
             if(hs>17){
                 break;
             }
-            if(s>21){
-                printf("Player won since host was busted!");
-                return 0;
-            }
+            
             hz=draw();
             hs+=hz;
+            
             printf("Added card:%d. Total points=%d.\n", hz, hs);
         }
-        if(hs>s){
-            printf("Host won!");
+        if(s<=21 && hs<=21){
+            if(hs>s){
+               printf("Host won!");
+            }
+            if(hs=s){
+               printf("Draw!");
+            }
+            if(hs<s){
+               printf("Player won!");
+            }
         }
-        if(hs=s){
-            printf("Draw!");
-        }
-        if(hs<s){
-            printf("Player won!");
+        else{
+            printf("Player won since host was busted!");
         }
     }
+    
+    
+    
 }
 
 int draw(void){
