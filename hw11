@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int main(void)
+{
+    unsigned int ac=0, bc=0, cc=0, dc=0, s, t;
+    
+    printf("Enter the scores(Enter (ctrl+d) to end.):");
+    scanf("%d", &s);
+    
+    while((s=getchar())!=EOF){
+        
+        switch(s/10){
+            case 10:
+            case 9: 
+            case 8:
+               printf("(A)\n");
+               ++ac;
+               break;
+               
+            case 7:
+               printf("(B)\n");
+               ++bc;
+               break;
+            
+            case 6:
+               printf("(C)\n");
+               ++cc;
+               break;
+               
+            case 5: 
+            case 4:
+            case 3:
+            case 2:
+            case 1:
+            case 0:
+               printf("(D)\n");
+               ++dc;
+               break;
+               
+            case'\n': 
+            case'\t': 
+            case' ':
+               break;
+            
+            default:
+               printf("Please enter again.\n");
+               break;
+        }
+    }
+    printf("The total students:%d\n", t);
+    printf("A:%d\n", ac);
+    printf("B:%d\n", bc);
+    printf("C:%d\n", cc);
+    printf("D:%d\n", dc);
+}
