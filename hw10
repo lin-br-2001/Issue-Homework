@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main(void){
+    int c, l, z;
+    
+    for(l=1;l<=9;++l){
+        for(c=1;c<=9;++c){
+           z=c*l;
+           printf("%d * %d = %-4d", c, l ,z);
+        }
+    }
+}
